@@ -1,0 +1,4 @@
+# for Component Governance
+# https://github.com/microsoft/component-detection/blob/main/docs/feature-overview.md
+# https://github.com/microsoft/component-detection/blob/main/src/Microsoft.ComponentDetection.Detectors/pip/PipReportComponentDetector.cs#L67
+olive-ai

@@ -1,0 +1,883 @@
+[
+  {
+    "catalogName": "Developer Tools",
+    "mcpServers": [
+      {
+        "name": "GitHub",
+        "publisher": "GitHub",
+        "description": "Access GitHub repositories, issues, and pull requests through secure API integration.",
+        "sourceUrl": "https://github.com/github/github-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22github%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fapi.githubcopilot.com%2Fmcp%2F%22%7D",
+        "mcpName": "github",
+        "vscodeConfig": {
+          "name": "github",
+          "gallery": true,
+          "url": "https://api.githubcopilot.com/mcp/"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://api.githubcopilot.com/mcp/"
+        },
+        "icon": "icons/github.svg"
+      },
+      {
+        "name": "Playwright",
+        "publisher": "Microsoft",
+        "description": "Automate web browsers using accessibility trees for testing and data extraction.",
+        "sourceUrl": "https://github.com/microsoft/playwright-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22playwright%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40playwright%2Fmcp%40latest%22%5D%7D",
+        "mcpName": "playwright",
+        "vscodeConfig": {
+          "name": "playwright",
+          "gallery": true,
+          "command": "npx",
+          "args": [
+            "@playwright/mcp@latest"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "@playwright/mcp@latest"
+          ]
+        },
+        "icon": "icons/playwright.svg"
+      },
+      {
+        "name": "Sentry",
+        "publisher": "Sentry",
+        "description": "Retrieve and analyze application errors and performance issues from Sentry projects.",
+        "sourceUrl": "https://github.com/getsentry/sentry-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22sentry%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.sentry.dev%2Fmcp%22%7D",
+        "mcpName": "sentry",
+        "vscodeConfig": {
+          "name": "sentry",
+          "gallery": true,
+          "url": "https://mcp.sentry.dev/mcp"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://mcp.sentry.dev/mcp"
+        },
+        "icon": "icons/sentry.svg"
+      },
+      {
+        "name": "Hugging Face",
+        "publisher": "Hugging Face",
+        "description": "Access models, datasets, and Spaces on the Hugging Face Hub.",
+        "sourceUrl": "https://hf.co/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22huggingface%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fhf.co%2Fmcp%22%7D",
+        "mcpName": "huggingface",
+        "vscodeConfig": {
+          "name": "huggingface",
+          "gallery": true,
+          "url": "https://hf.co/mcp"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://hf.co/mcp"
+        },
+        "icon": "icons/hugging_face.svg"
+      },
+      {
+        "name": "DeepWiki",
+        "publisher": "Kevin Kern",
+        "description": "Query and extract information from GitHub repositories indexed on DeepWiki.",
+        "sourceUrl": "https://github.com/regenrek/deepwiki-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22deepwiki%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.deepwiki.com%2Fsse%22%7D",
+        "mcpName": "deepwiki",
+        "vscodeConfig": {
+          "name": "deepwiki",
+          "gallery": true,
+          "url": "https://mcp.deepwiki.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.deepwiki.com/sse"
+        },
+        "icon": "codicon-search"
+      },
+      {
+        "name": "MarkItDown",
+        "publisher": "Microsoft",
+        "description": "Convert various file formats (PDF, Word, Excel, images, audio) to Markdown.",
+        "sourceUrl": "https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22markitdown%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22markitdown-mcp%22%5D%7D",
+        "mcpName": "markitdown",
+        "vscodeConfig": {
+          "name": "markitdown",
+          "gallery": true,
+          "command": "uvx",
+          "args": [
+            "markitdown-mcp"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "uvx",
+          "args": [
+            "markitdown-mcp"
+          ]
+        },
+        "icon": "icons/markitdown.svg"
+      },
+      {
+        "name": "Microsoft Docs",
+        "publisher": "Microsoft",
+        "description": "Search and retrieve content from Microsoft Learn, Azure documentation, and official Microsoft technical resources.",
+        "sourceUrl": "https://github.com/microsoftdocs/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22microsoft-docs%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D",
+        "mcpName": "microsoft-docs",
+        "vscodeConfig": {
+          "name": "microsoft-docs",
+          "gallery": true,
+          "url": "https://learn.microsoft.com/api/mcp"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://learn.microsoft.com/api/mcp"
+        },
+        "icon": "icons/microsoft_docs.svg"
+      },
+      {
+        "name": "Context7",
+        "publisher": "Upstash",
+        "description": "Get up-to-date, version-specific documentation and code examples from any library or framework.",
+        "sourceUrl": "https://github.com/upstash/context7",
+        "installUrl": "vscode:extension/Upstash.context7-mcp",
+        "mcpName": "context7",
+        "vscodeConfig": null,
+        "mcpConfig": null,
+        "icon": "icons/context7.svg"
+      },
+      {
+        "name": "ImageSorcery",
+        "publisher": "Sunrise Apps",
+        "description": "Local image processing with computer vision capabilities including object detection, OCR, image editing, and transformations.",
+        "sourceUrl": "https://github.com/sunriseapps/imagesorcery-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22imagesorcery%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22imagesorcery-mcp%22%5D%7D",
+        "mcpName": "imagesorcery",
+        "vscodeConfig": {
+          "name": "imagesorcery",
+          "gallery": true,
+          "command": "uvx",
+          "args": [
+            "imagesorcery-mcp"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "uvx",
+          "args": [
+            "imagesorcery-mcp"
+          ]
+        },
+        "icon": "codicon-paintcan"
+      },
+      {
+        "name": "Codacy",
+        "publisher": "Codacy",
+        "description": "Comprehensive code quality and security analysis. SAST, secrets detection, dependency scanning, IaC security, and automated code review.",
+        "sourceUrl": "https://github.com/codacy/codacy-mcp-server",
+        "installUrl": "vscode:extension/codacy-app.codacy",
+        "mcpName": "codacy",
+        "vscodeConfig": null,
+        "mcpConfig": null,
+        "icon": "codicon-shield"
+      },
+      {
+        "name": "Figma",
+        "publisher": "Figma",
+        "description": "Extract UI content and generate code from Figma designs. Update to the latest desktop app version.",
+        "sourceUrl": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22figma%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22http%3A%2F%2F127.0.0.1%3A3845%2Fmcp%22%7D",
+        "mcpName": "figma",
+        "vscodeConfig": {
+          "name": "figma",
+          "gallery": true,
+          "url": "http://127.0.0.1:3845/mcp"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "http://127.0.0.1:3845/mcp"
+        },
+        "icon": "icons/figma.svg"
+      }
+    ]
+  },
+  {
+    "catalogName": "Productivity",
+    "mcpServers": [
+      {
+        "name": "Notion",
+        "publisher": "Notion",
+        "description": "View, search, create, and update Notion pages and databases.",
+        "sourceUrl": "https://github.com/makenotion/notion-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22notion%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22NOTION_TOKEN%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Notion%20API%20Token%20(https%3A%2F%2Fwww.notion.so%2Fprofile%2Fintegrations)%22%2C%22password%22%3Atrue%7D%5D%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40notionhq%2Fnotion-mcp-server%22%5D%2C%22env%22%3A%7B%22OPENAPI_MCP_HEADERS%22%3A%7B%22Authorization%22%3A%22Bearer%20%24%7Binput%3ANOTION_TOKEN%7D%22%2C%22Notion-Version%22%3A%222022-06-28%22%7D%7D%7D",
+        "mcpName": "notion",
+        "vscodeConfig": {
+          "name": "notion",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "NOTION_TOKEN",
+              "type": "promptString",
+              "description": "Notion API Token (https://www.notion.so/profile/integrations)",
+              "password": true
+            }
+          ],
+          "command": "npx",
+          "args": [
+            "-y",
+            "@notionhq/notion-mcp-server"
+          ],
+          "env": {
+            "OPENAPI_MCP_HEADERS": {
+              "Authorization": "Bearer ${input:NOTION_TOKEN}",
+              "Notion-Version": "2022-06-28"
+            }
+          }
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@notionhq/notion-mcp-server"
+          ],
+          "env": {
+            "OPENAPI_MCP_HEADERS": {
+              "Authorization": "Bearer {{YOUR_NOTION_TOKEN}}",
+              "Notion-Version": "2022-06-28"
+            }
+          }
+        },
+        "icon": "icons/notion.svg"
+      },
+      {
+        "name": "Linear",
+        "publisher": "Linear",
+        "description": "Create, update, and track issues in Linear's project management platform.",
+        "sourceUrl": "https://linear.app/docs/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22linear%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.linear.app%2Fsse%22%7D",
+        "mcpName": "linear",
+        "vscodeConfig": {
+          "name": "linear",
+          "gallery": true,
+          "url": "https://mcp.linear.app/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.linear.app/sse"
+        },
+        "icon": "icons/linear.svg"
+      },
+      {
+        "name": "Sequential Thinking",
+        "publisher": "Model Context Protocol",
+        "description": "Break down complex tasks into manageable steps with transparent tracking.",
+        "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22sequentialthinking%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-sequential-thinking%22%5D%7D",
+        "mcpName": "sequentialthinking",
+        "vscodeConfig": {
+          "name": "sequentialthinking",
+          "gallery": true,
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-sequential-thinking"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-sequential-thinking"
+          ]
+        },
+        "icon": "codicon-list-ordered"
+      },
+      {
+        "name": "Memory",
+        "publisher": "Model Context Protocol",
+        "description": "Store and retrieve contextual information across sessions.",
+        "sourceUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22memory%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22memory_file_path%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Path%20to%20the%20memory%20storage%20file%20(optional)%22%2C%22password%22%3Afalse%7D%5D%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-memory%22%5D%2C%22env%22%3A%7B%22MEMORY_FILE_PATH%22%3A%22%24%7Binput%3Amemory_file_path%7D%22%7D%7D",
+        "mcpName": "memory",
+        "vscodeConfig": {
+          "name": "memory",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "memory_file_path",
+              "type": "promptString",
+              "description": "Path to the memory storage file (optional)",
+              "password": false
+            }
+          ],
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-memory"
+          ],
+          "env": {
+            "MEMORY_FILE_PATH": "${input:memory_file_path}"
+          }
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-memory"
+          ],
+          "env": {
+            "MEMORY_FILE_PATH": "{{YOUR_MEMORY_FILE_PATH}}"
+          }
+        },
+        "icon": "codicon-history"
+      },
+      {
+        "name": "Asana",
+        "publisher": "Asana",
+        "description": "Create and manage tasks, projects, and comments through the Asana API.",
+        "sourceUrl": "https://developers.asana.com/docs/using-asanas-model-control-protocol-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22asana%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.asana.com%2Fsse%22%7D",
+        "mcpName": "asana",
+        "vscodeConfig": {
+          "name": "asana",
+          "gallery": true,
+          "url": "https://mcp.asana.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.asana.com/sse"
+        },
+        "icon": "icons/asana.svg"
+      },
+      {
+        "name": "Atlassian",
+        "publisher": "Atlassian",
+        "description": "Connect to Jira and Confluence for issue tracking and documentation.",
+        "sourceUrl": "https://www.atlassian.com/platform/remote-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22atlassian%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.atlassian.com%2Fv1%2Fsse%22%7D",
+        "mcpName": "atlassian",
+        "vscodeConfig": {
+          "name": "atlassian",
+          "gallery": true,
+          "url": "https://mcp.atlassian.com/v1/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.atlassian.com/v1/sse"
+        },
+        "icon": "icons/atlassian.svg"
+      },
+      {
+        "name": "Zapier",
+        "publisher": "Zapier",
+        "description": "Create workflows and execute tasks across 30,000+ connected apps.",
+        "sourceUrl": "https://zapier.com/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22zapier%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fapi.zapier.com%2Fv1%2Fmcp%2Fsse%22%7D",
+        "mcpName": "zapier",
+        "vscodeConfig": {
+          "name": "zapier",
+          "gallery": true,
+          "url": "https://api.zapier.com/v1/mcp/sse"
+        },
+        "mcpConfig": {
+          "url": "https://api.zapier.com/v1/{{YOUR_MCP_ENDPOINT}}"
+        },
+        "icon": "icons/zapier.svg"
+      },
+      {
+        "name": "Monday.com",
+        "publisher": "Monday.com",
+        "description": "Project management integration with Monday.com. Manage boards, items, users, teams, and workspace operations.",
+        "sourceUrl": "https://github.com/mondaycom/monday-ai/tree/master/packages/monday-api-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22monday-mcp%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.monday.com%2Fsse%22%7D",
+        "mcpName": "monday-mcp",
+        "vscodeConfig": {
+          "name": "monday-mcp",
+          "gallery": true,
+          "url": "https://mcp.monday.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.monday.com/sse"
+        },
+        "icon": "codicon-calendar"
+      }
+    ]
+  },
+  {
+    "catalogName": "Data & Analytics",
+    "mcpServers": [
+      {
+        "name": "DuckDB",
+        "publisher": "Kentaro Tanaka",
+        "description": "Query and analyze data in DuckDB databases locally and in the cloud.",
+        "sourceUrl": "https://github.com/ktanaka101/mcp-server-duckdb",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22duckdb%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22duckdb_db_path%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Path%20to%20the%20DuckDB%20database%20file%20(e.g.%2C%20%2Fpath%2Fto%2Fdatabase.duckdb)%22%2C%22password%22%3Afalse%7D%5D%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22mcp-server-duckdb%22%2C%22--db-path%22%2C%22%24%7Binput%3Aduckdb_db_path%7D%22%5D%7D",
+        "mcpName": "duckdb",
+        "vscodeConfig": {
+          "name": "duckdb",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "duckdb_db_path",
+              "type": "promptString",
+              "description": "Path to the DuckDB database file (e.g., /path/to/database.duckdb)",
+              "password": false
+            }
+          ],
+          "command": "uvx",
+          "args": [
+            "mcp-server-duckdb",
+            "--db-path",
+            "${input:duckdb_db_path}"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "uvx",
+          "args": [
+            "mcp-server-duckdb",
+            "--db-path",
+            "{{YOUR_DUCKDB_DB_PATH}}"
+          ]
+        },
+        "icon": "icons/duckdb.svg"
+      },
+      {
+        "name": "PostHog",
+        "publisher": "PostHog",
+        "description": "Access PostHog analytics to create annotations and retrieve product usage insights.",
+        "sourceUrl": "https://github.com/PostHog/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22posthog%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22posthog_api_key%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22PostHog%20API%20Key%20with%20annotation%3Awrite%20and%20project%3Aread%20scopes%22%2C%22password%22%3Atrue%7D%5D%2C%22url%22%3A%22https%3A%2F%2Fmcp.posthog.com%2Fsse%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%24%7Binput%3Aposthog_api_key%7D%22%7D%7D",
+        "mcpName": "posthog",
+        "vscodeConfig": {
+          "name": "posthog",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "posthog_api_key",
+              "type": "promptString",
+              "description": "PostHog API Key with annotation:write and project:read scopes",
+              "password": true
+            }
+          ],
+          "url": "https://mcp.posthog.com/sse",
+          "headers": {
+            "Authorization": "Bearer ${input:posthog_api_key}"
+          }
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.posthog.com/sse",
+          "headers": {
+            "Authorization": "Bearer {{YOUR_POSTHOG_API_KEY}}"
+          }
+        },
+        "icon": "icons/posthog.svg"
+      },
+      {
+        "name": "Neon",
+        "publisher": "neondatabase labs",
+        "description": "Manage and query Neon Postgres databases with natural language.",
+        "sourceUrl": "https://github.com/neondatabase-labs/mcp-server-neon",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22neon%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.neon.tech%2Fsse%22%7D",
+        "mcpName": "neon",
+        "vscodeConfig": {
+          "name": "neon",
+          "gallery": true,
+          "url": "https://mcp.neon.tech/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.neon.tech/sse"
+        },
+        "icon": "icons/neon.svg"
+      },
+      {
+        "name": "Apify",
+        "publisher": "Apify",
+        "description": "Extract data from websites and automate workflows through Apify's Actor ecosystem.",
+        "sourceUrl": "https://docs.apify.com/platform/integrations/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22apify%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.apify.com%22%7D",
+        "mcpName": "apify",
+        "vscodeConfig": {
+          "name": "apify",
+          "gallery": true,
+          "url": "https://mcp.apify.com"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://mcp.apify.com"
+        },
+        "icon": "icons/apify.svg"
+      },
+      {
+        "name": "Microsoft Clarity",
+        "publisher": "Microsoft",
+        "description": "Access Microsoft Clarity analytics data including heatmaps, session recordings, and user behavior insights.",
+        "sourceUrl": "https://github.com/microsoft/clarity-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22clarity%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22clarity_api_token%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Microsoft%20Clarity%20API%20Token%20(from%20Settings%20%E2%86%92%20Data%20Export%20%E2%86%92%20Generate%20API%20token)%22%2C%22password%22%3Atrue%7D%5D%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40microsoft%2Fclarity-mcp-server%22%2C%22--clarity_api_token%3D%24%7Binput%3Aclarity_api_token%7D%22%5D%7D",
+        "mcpName": "clarity",
+        "vscodeConfig": {
+          "name": "clarity",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "clarity_api_token",
+              "type": "promptString",
+              "description": "Microsoft Clarity API Token (from Settings → Data Export → Generate API token)",
+              "password": true
+            }
+          ],
+          "command": "npx",
+          "args": [
+            "-y",
+            "@microsoft/clarity-mcp-server",
+            "--clarity_api_token=${input:clarity_api_token}"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@microsoft/clarity-mcp-server",
+            "--clarity_api_token={{YOUR_CLARITY_API_TOKEN}}"
+          ]
+        },
+        "icon": "codicon-graph"
+      },
+      {
+        "name": "Firecrawl",
+        "publisher": "Mendable",
+        "description": "Extract data from websites with advanced web scraping, crawling, search, and structured data extraction.",
+        "sourceUrl": "https://github.com/mendableai/firecrawl-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22firecrawl%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22firecrawl_api_key%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Firecrawl%20API%20Key%20(get%20from%20https%3A%2F%2Fwww.firecrawl.dev%2Fapp%2Fapi-keys)%22%2C%22password%22%3Atrue%7D%5D%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22firecrawl-mcp%22%5D%2C%22env%22%3A%7B%22FIRECRAWL_API_KEY%22%3A%22%24%7Binput%3Afirecrawl_api_key%7D%22%7D%7D",
+        "mcpName": "firecrawl",
+        "vscodeConfig": {
+          "name": "firecrawl",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "firecrawl_api_key",
+              "type": "promptString",
+              "description": "Firecrawl API Key (get from https://www.firecrawl.dev/app/api-keys)",
+              "password": true
+            }
+          ],
+          "command": "npx",
+          "args": [
+            "-y",
+            "firecrawl-mcp"
+          ],
+          "env": {
+            "FIRECRAWL_API_KEY": "${input:firecrawl_api_key}"
+          }
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "firecrawl-mcp"
+          ],
+          "env": {
+            "FIRECRAWL_API_KEY": "{{YOUR_FIRECRAWL_API_KEY}}"
+          }
+        },
+        "icon": "icons/firecrawl.png"
+      },
+      {
+        "name": "Prisma Postgres",
+        "publisher": "Prisma",
+        "description": "Database operations with Prisma ORM and PostgreSQL. Schema management, query execution, migrations, and data modeling.",
+        "sourceUrl": "https://www.prisma.io/docs/postgres/integrations/mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22prisma-postgres%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.prisma.io%2Fmcp%22%7D",
+        "mcpName": "prisma-postgres",
+        "vscodeConfig": {
+          "name": "prisma-postgres",
+          "gallery": true,
+          "url": "https://mcp.prisma.io/mcp"
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://mcp.prisma.io/mcp"
+        },
+        "icon": "codicon-database"
+      },
+      {
+        "name": "MongoDB",
+        "publisher": "MongoDB",
+        "description": "Database operations and management. Execute queries, manage collections, aggregation pipelines, and document operations.",
+        "sourceUrl": "https://github.com/mongodb-js/mongodb-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22mongodb%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22mongodb-mcp-server%22%5D%7D",
+        "mcpName": "mongodb",
+        "vscodeConfig": {
+          "name": "mongodb",
+          "gallery": true,
+          "command": "npx",
+          "args": [
+            "-y",
+            "mongodb-mcp-server"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "mongodb-mcp-server"
+          ]
+        },
+        "icon": "codicon-database"
+      }
+    ]
+  },
+  {
+    "catalogName": "Business Services",
+    "mcpServers": [
+      {
+        "name": "Stripe",
+        "publisher": "Stripe",
+        "description": "Create customers, manage subscriptions, and generate payment links through Stripe APIs.",
+        "sourceUrl": "https://docs.stripe.com/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22stripe%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22stripe_api_key%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Stripe%20API%20Key%20(https%3A%2F%2Fdashboard.stripe.com%2Fapikeys)%22%2C%22password%22%3Atrue%7D%5D%2C%22url%22%3A%22https%3A%2F%2Fmcp.stripe.com%2F%22%2C%22headers%22%3A%7B%22Authorization%22%3A%22Bearer%20%24%7Binput%3Astripe_api_key%7D%22%7D%7D",
+        "mcpName": "stripe",
+        "vscodeConfig": {
+          "name": "stripe",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "stripe_api_key",
+              "type": "promptString",
+              "description": "Stripe API Key (https://dashboard.stripe.com/apikeys)",
+              "password": true
+            }
+          ],
+          "url": "https://mcp.stripe.com/",
+          "headers": {
+            "Authorization": "Bearer ${input:stripe_api_key}"
+          }
+        },
+        "mcpConfig": {
+          "type": "http",
+          "url": "https://mcp.stripe.com/",
+          "headers": {
+            "Authorization": "Bearer {{YOUR_STRIPE_API_KEY}}"
+          }
+        },
+        "icon": "icons/stripe.Default"
+      },
+      {
+        "name": "PayPal",
+        "publisher": "PayPal",
+        "description": "Create invoices, process payments, and access transaction data through PayPal services.",
+        "sourceUrl": "https://developer.paypal.com/tools/mcp-server/",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22paypal%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.paypal.com%2Fsse%22%7D",
+        "mcpName": "paypal",
+        "vscodeConfig": {
+          "name": "paypal",
+          "gallery": true,
+          "url": "https://mcp.paypal.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.paypal.com/sse"
+        },
+        "icon": "icons/paypal.svg"
+      },
+      {
+        "name": "Square",
+        "publisher": "Square",
+        "description": "Process payments and manage customers through Square's API ecosystem.",
+        "sourceUrl": "https://developer.squareup.com/docs/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22square%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.squareup.com%2Fsse%22%7D",
+        "mcpName": "square",
+        "vscodeConfig": {
+          "name": "square",
+          "gallery": true,
+          "url": "https://mcp.squareup.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.squareup.com/sse"
+        },
+        "icon": "icons/square.svg"
+      },
+      {
+        "name": "Intercom",
+        "publisher": "Intercom",
+        "description": "Access customer conversations and support tickets for data analysis.",
+        "sourceUrl": "https://developers.intercom.com/docs/guides/mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22intercom%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.intercom.com%2Fsse%22%7D",
+        "mcpName": "intercom",
+        "vscodeConfig": {
+          "name": "intercom",
+          "gallery": true,
+          "url": "https://mcp.intercom.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.intercom.com/sse"
+        },
+        "icon": "icons/intercom.svg"
+      },
+      {
+        "name": "Wix",
+        "publisher": "Wix",
+        "description": "Build and manage Wix sites with eCommerce, bookings, and payment features.",
+        "sourceUrl": "https://www.wix.com/studio/developers/mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22wix%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.wix.com%2Fsse%22%7D",
+        "mcpName": "wix",
+        "vscodeConfig": {
+          "name": "wix",
+          "gallery": true,
+          "url": "https://mcp.wix.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.wix.com/sse"
+        },
+        "icon": "icons/wix.svg"
+      },
+      {
+        "name": "Webflow",
+        "publisher": "Webflow",
+        "description": "Create and manage websites, collections, and content through Webflow's APIs.",
+        "sourceUrl": "https://github.com/webflow/mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22webflow%22%2C%22gallery%22%3Atrue%2C%22url%22%3A%22https%3A%2F%2Fmcp.webflow.com%2Fsse%22%7D",
+        "mcpName": "webflow",
+        "vscodeConfig": {
+          "name": "webflow",
+          "gallery": true,
+          "url": "https://mcp.webflow.com/sse"
+        },
+        "mcpConfig": {
+          "type": "sse",
+          "url": "https://mcp.webflow.com/sse"
+        },
+        "icon": "icons/webflow.svg"
+      }
+    ]
+  },
+  {
+    "catalogName": "Cloud & Infrastructure",
+    "mcpServers": [
+      {
+        "name": "Convex",
+        "publisher": "Convex",
+        "description": "Access Convex backend databases and functions for real-time data operations.",
+        "sourceUrl": "https://stack.convex.dev/convex-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22convex%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22convex%40latest%22%2C%22mcp%22%2C%22start%22%5D%7D",
+        "mcpName": "convex",
+        "vscodeConfig": {
+          "name": "convex",
+          "gallery": true,
+          "command": "npx",
+          "args": [
+            "-y",
+            "convex@latest",
+            "mcp",
+            "start"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "convex@latest",
+            "mcp",
+            "start"
+          ]
+        },
+        "icon": "icons/convex.svg"
+      },
+      {
+        "name": "Azure",
+        "publisher": "Microsoft",
+        "description": "Manage Azure resources, query databases, and access Azure services.",
+        "sourceUrl": "https://github.com/azure/azure-mcp",
+        "installUrl": "vscode:extension/ms-azuretools.vscode-azure-mcp-server",
+        "mcpName": "azure",
+        "vscodeConfig": null,
+        "mcpConfig": null,
+        "icon": "icons/azure.svg"
+      },
+      {
+        "name": "Azure DevOps",
+        "publisher": "Microsoft",
+        "description": "Manage Azure DevOps projects, work items, repositories, builds, releases, and test plans.",
+        "sourceUrl": "https://github.com/microsoft/azure-devops-mcp",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22azure-devops%22%2C%22gallery%22%3Atrue%2C%22inputs%22%3A%5B%7B%22id%22%3A%22ado_org%22%2C%22type%22%3A%22promptString%22%2C%22description%22%3A%22Azure%20DevOps%20organization%20name%20(e.g.%20&#x27;contoso&#x27;)%22%2C%22password%22%3Afalse%7D%5D%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40azure-devops%2Fmcp%22%2C%22%24%7Binput%3Aado_org%7D%22%5D%7D",
+        "mcpName": "azure-devops",
+        "vscodeConfig": {
+          "name": "azure-devops",
+          "gallery": true,
+          "inputs": [
+            {
+              "id": "ado_org",
+              "type": "promptString",
+              "description": "Azure DevOps organization name (e.g. &#x27;contoso&#x27;)",
+              "password": false
+            }
+          ],
+          "command": "npx",
+          "args": [
+            "-y",
+            "@azure-devops/mcp",
+            "${input:ado_org}"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@azure-devops/mcp",
+            "{{YOUR_ADO_ORG}}"
+          ]
+        },
+        "icon": "icons/azure_devops.svg"
+      },
+      {
+        "name": "Terraform",
+        "publisher": "HashiCorp",
+        "description": "Infrastructure as Code management with Terraform. Plan, apply, destroy operations, state management, and resource inspection.",
+        "sourceUrl": "https://github.com/hashicorp/terraform-mcp-server",
+        "installUrl": "vscode:mcp/install?%7B%22name%22%3A%22terraform%22%2C%22gallery%22%3Atrue%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22hashicorp%2Fterraform-mcp-server%22%5D%7D",
+        "mcpName": "terraform",
+        "vscodeConfig": {
+          "name": "terraform",
+          "gallery": true,
+          "command": "docker",
+          "args": [
+            "run",
+            "-i",
+            "--rm",
+            "hashicorp/terraform-mcp-server"
+          ]
+        },
+        "mcpConfig": {
+          "type": "stdio",
+          "command": "docker",
+          "args": [
+            "run",
+            "-i",
+            "--rm",
+            "hashicorp/terraform-mcp-server"
+          ]
+        },
+        "icon": "codicon-server-process"
+      }
+    ]
+  }
+]

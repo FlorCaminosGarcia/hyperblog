@@ -1,0 +1,23 @@
+{
+  "base": "https://learn.microsoft.com/windows/ai/model-catalog",
+  "models": [
+    {
+      "id": "example-store-model",
+      "alias": "store-model",
+      "name": "Example Store Model",
+      "version": "1.0.0",
+      "modelType": "ONNX",
+      "publisher": "YourPublisherName",
+      "executionProviders": "CPUExecutionProvider, DMLExecutionProvider",
+      "license": "MIT",
+      "licenseUri": "https://opensource.org/licenses/MIT",
+      "packages": [
+        {
+          "packageFamilyName": "[YourPackageFamilyName]",
+          "uri": "ms-windows-store://pdp/?ProductId=YourProductId",
+          "sha256": "YourSHA256"
+        }
+      ]
+    }
+  ]
+}

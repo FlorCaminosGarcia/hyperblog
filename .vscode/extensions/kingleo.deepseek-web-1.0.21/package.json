@@ -1,0 +1,80 @@
+{
+	"name": "deepseek-web",
+	"displayName": "DeepSeek",
+	"description": "Open DeepSeek Chat directly in VS Code's Simple Browser.",
+	"version": "1.0.21",
+	"publisher": "Kingleo",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KingLeoJr/vscode-deepseek-web.git"
+	},
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:deepseek.openChat"
+	],
+	"main": "./out/extension.js",
+	"icon": "images/icon.png",
+	"contributes": {
+		"commands": [
+			{
+				"command": "deepseek.openChat",
+				"title": "Open DeepSeek Chat"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "deepseek.openChat",
+					"group": "navigation",
+					"when": "view == deepseekChatView"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "deepseekWeb",
+					"title": "DeepSeek",
+					"icon": "images/activitybar-icon.svg"
+				}
+			]
+		},
+		"views": {
+			"deepseekWeb": [
+				{
+					"id": "deepseekChatView",
+					"name": "DeepSeek",
+					"type": "webview",
+					"contextualTitle": "DeepSeek"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.75.0",
+		"typescript": "^4.9.4",
+		"vsce": "^2.15.0"
+	},
+	"keywords": [
+		"DeepSeek",
+		"DeepSeek Chat",
+		"AI Chat",
+		"AI Assistant"
+	],
+	"license": "MIT",
+	"__metadata": {
+		"installedTimestamp": 1763341003641,
+		"targetPlatform": "undefined",
+		"size": 12564670
+	}
+}

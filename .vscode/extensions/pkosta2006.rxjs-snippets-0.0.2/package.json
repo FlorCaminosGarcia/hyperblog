@@ -1,0 +1,48 @@
+{
+	"name": "rxjs-snippets",
+	"displayName": "rxjs-snippets",
+	"description": "Generate Reactivex rxjs code snippets for typescript/javascript.",
+	"version": "0.0.2",
+	"publisher": "pkosta2006",
+	"icon": "images/rxjs_icon.png",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"bugs": {
+		"url": "https://github.com/prashantkoshta/rxjs-snippets-vscode.git/issues",
+		"email": "pkosta2005@outlook.com"
+	},
+	"homepage": "https://github.com/prashantkoshta/rxjs-snippets-vscode.git/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/prashantkoshta/rxjs-snippets-vscode.git"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"scripts": {},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"keywords": [
+		"RxJs",
+		"rxjs",
+		"snippets",
+		"ReactiveX",
+		"Reactivex"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "src/javascript.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"vscode": "^1.0.0"
+	},
+	"__metadata": {
+		"installedTimestamp": 1763341891647,
+		"targetPlatform": "undefined",
+		"size": 17128
+	}
+}

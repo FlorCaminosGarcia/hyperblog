@@ -1,0 +1,622 @@
+name: OpenAI
+features:
+  attachments:
+    - type: text
+      aitkEnhanced: true
+      mimeTypes:
+        - application/pdf
+        - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+        - application/epub+zip
+        - application/vnd.oasis.opendocument.text
+        - application/rtf
+        - text/csv
+        - text/plain
+        - text/html
+        - application/json
+        - application/vnd.openxmlformats-officedocument.presentationml.presentation
+        - application/vnd.oasis.opendocument.presentation
+        - text/javascript
+        - text/css
+        - application/x-httpd-php
+        - application/x-sh
+        - text/markdown
+models:
+  - name: gpt-5
+    displayName: "GPT-5"
+    info:
+      icon: openai
+      modelCard: "gpt-5"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 400000
+      popular: 1
+    features:
+      isEditable: true
+      streaming: false
+      structuredOutputs: true
+      tokenCounting: true
+      webSearch: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: api
+        - name: max_tokens
+        - name: verbosity
+        - name: reasoning_effort
+        - name: reasoning_summary
+          default: ""
+          when:
+            parameter: api
+            value: Responses
+  - name: gpt-5-mini
+    displayName: "GPT-5 mini"
+    info:
+      icon: openai
+      modelCard: "gpt-5-mini"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 400000
+    features:
+      isEditable: true
+      streaming: false
+      structuredOutputs: true
+      tokenCounting: true
+      webSearch: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: api
+        - name: max_tokens
+        - name: verbosity
+        - name: reasoning_effort
+        - name: reasoning_summary
+          default: ""
+          when:
+            parameter: api
+            value: Responses
+  - name: gpt-5-nano
+    displayName: "GPT-5 nano"
+    info:
+      icon: openai
+      modelCard: "gpt-5-nano"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 400000
+    features:
+      isEditable: true
+      streaming: false
+      structuredOutputs: true
+      tokenCounting: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: api
+        - name: max_tokens
+        - name: verbosity
+        - name: reasoning_effort
+        - name: reasoning_summary
+          default: ""
+          when:
+            parameter: api
+            value: Responses
+  - name: gpt-5-chat-latest
+    displayName: "GPT-5 Chat"
+    info:
+      icon: openai
+      modelCard: "gpt-5-chat-latest"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 400000
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: false
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+        - name: temperature
+          default: 1
+        - name: top_p
+          default: 1
+        - name: presence_penalty
+          default: 0
+        - name: frequency_penalty
+          default: 0
+  - name: gpt-4.5-preview
+    displayName: "GPT-4.5-preview"
+    info:
+      icon: openai
+      modelCard: "gpt-4.5-preview"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 128000
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      api:
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 16384
+        - name: temperature
+          default: 1
+        - name: top_p
+          default: 1
+        - name: presence_penalty
+          default: 0
+        - name: frequency_penalty
+          default: 0
+  - name: gpt-4.1
+    displayName: "GPT-4.1"
+    info:
+      icon: openai
+      modelCard: "gpt-4.1"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 1047576
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      webSearch: true
+      api:
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 32768
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+  - name: gpt-4.1-mini
+    displayName: "GPT-4.1 mini"
+    info:
+      icon: openai
+      modelCard: "gpt-4.1-mini"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 1047576
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      webSearch: true
+      api:
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 32768
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+  - name: gpt-4.1-nano
+    displayName: "GPT-4.1 nano"
+    info:
+      icon: openai
+      modelCard: "gpt-4.1-nano"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 1047576
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      api:
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 32768
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+  - name: o3
+    displayName: "O3"
+    info: 
+      icon: openai
+      modelCard: o3
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 200000
+      reasoning: true
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: api
+        - name: max_tokens
+          default: 32768
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+        - name: reasoning_effort
+        - name: reasoning_summary
+          default: ""
+          when:
+            parameter: api
+            value: Responses
+  - name: o1-preview
+    displayName: "o1-preview"
+    info:
+      icon: openai
+      modelCard: o1
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 128000
+      reasoning: true
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      promptGenerator: user_prompt
+      testDataGenerator: true
+    parameterSchema:
+      enabled:
+        - name: max_tokens
+          default: 32768
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+  - name: o1-mini
+    displayName: "o1-mini"
+    info:
+      icon: openai
+      modelCard: o1
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 128000
+      reasoning: true
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      attachments:
+      promptGenerator: user_prompt
+      testDataGenerator: true
+    parameterSchema:
+      enabled:
+        - name: max_tokens
+          default: 65536
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+  - name: gpt-4o
+    displayName: "GPT-4o"
+    info:
+      icon: openai
+      modelCard: "gpt-4o"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 128000
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      webSearch: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 16384
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+        - name: api
+  - name: gpt-4o-mini
+    displayName: "GPT-4o mini"
+    info:
+      icon: openai
+      modelCard: "gpt-4o-mini"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 128000
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      webSearch: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+      responseFormats:
+        - text
+        - json_schema
+      promptGenerator: system_prompt
+      testDataGenerator: true
+      tools: true
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 16384
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+        - name: api
+  - name: gpt-4-turbo
+    displayName: "GPT-4 Turbo"
+    info:
+      icon: openai
+      modelCard: "gpt-4-turbo-and-gpt-4"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 128000
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      tools: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+        - type: image
+          mimeTypes:
+            - image/jpeg
+            - image/png
+            - image/gif
+            - image/webp
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 4096
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+        - name: api
+  - name: gpt-4
+    displayName: "GPT-4"
+    info:
+      icon: openai
+      modelCard: "gpt-4-turbo-and-gpt-4"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 8192
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      api:
+        - responses
+        - chat-completions
+      attachments:
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 4096
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+        - name: api
+  - name: gpt-3.5-turbo
+    displayName: "GPT-3.5 Turbo"
+    info:
+      icon: openai
+      modelCard: "gpt-3-5-turbo"
+      platform: OpenAI
+      publisher: OpenAI
+      task: "Text Generation"
+      contextWindow: 16385
+    features:
+      isEditable: true
+      streaming: true
+      structuredOutputs: false
+      tokenCounting: true
+      api:
+        - responses
+        - chat-completions
+    parameterSchema:
+      enabled:
+        - name: system_prompt
+        - name: max_tokens
+          default: 4096
+        - name: temperature
+        - name: top_p
+        - name: presence_penalty
+        - name: frequency_penalty
+        - name: api

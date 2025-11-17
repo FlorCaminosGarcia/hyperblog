@@ -1,0 +1,12 @@
+[
+    {
+        "name": "GitHub",
+        "mcpConfig": {
+            "type": "http",
+            "url": "https://api.githubcopilot.com/mcp/",
+            "headers": {
+                "Authorization": "Bearer {{YOUR_ACCESS_TOKEN}}"
+            }
+        }
+    }
+]

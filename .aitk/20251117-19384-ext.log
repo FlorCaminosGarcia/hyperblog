@@ -1,0 +1,50 @@
+[2025-11-17T00:54:04.212Z] [INFO] Command registration.
+[2025-11-17T00:54:04.603Z] [DEBUG] Fetching models from Azure AI Foundry catalog
+[2025-11-17T00:54:05.886Z] [INFO] Connected to agent:Inference.Service.Agent pipe after retries:0
+[2025-11-17T00:54:05.887Z] [INFO] Agent startup completed...
+[2025-11-17T00:54:05.891Z] [INFO] Agent unlocked
+[2025-11-17T00:54:07.127Z] [DEBUG] Successfully fetched 130 models from Azure AI Foundry catalog
+[2025-11-17T00:54:08.941Z] [DEBUG] Fetching models from Azure AI Foundry catalog
+[2025-11-17T00:54:10.682Z] [DEBUG] Successfully fetched 130 models from Azure AI Foundry catalog
+[2025-11-17T00:54:10.895Z] [INFO] Calling Foundry Local REST API: http://localhost:5272/foundry/list
+[2025-11-17T00:54:10.927Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:10.9159936-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:10.929Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:10.9164805-03:00 Valid devices: CPU, GPU
+[2025-11-17T00:54:10.930Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:10.9165678-03:00 Valid EPs: CPUExecutionProvider, WebGpuExecutionProvider
+[2025-11-17T00:54:11.554Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:11.5586053-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:624ms
+[2025-11-17T00:54:13.730Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:13.73423-03:00 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:13.730Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:13.7345759-03:00 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:13.731Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:13.735193-03:00 Total models fetched across all pages: 39
+[2025-11-17T00:54:13.733Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:13.7369724-03:00 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:2820ms
+[2025-11-17T00:54:14.041Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.0416058-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:299ms
+[2025-11-17T00:54:14.047Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.0478181-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:14.165Z] [INFO] Calling Foundry Local REST API: http://localhost:5272/foundry/list
+[2025-11-17T00:54:14.175Z] [DEBUG] Fetching models from Azure AI Foundry catalog
+[2025-11-17T00:54:14.202Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.1761865-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:14.406Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.4096628-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:200ms
+[2025-11-17T00:54:14.742Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:14.7456129-03:00 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:14.743Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:14.7470972-03:00 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:14.746Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:14.7476133-03:00 Total models fetched across all pages: 39
+[2025-11-17T00:54:14.747Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.7482305-03:00 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:572ms
+[2025-11-17T00:54:14.963Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.9668698-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:213ms
+[2025-11-17T00:54:14.971Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:14.9720841-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:15.126Z] [INFO] Calling Foundry Local REST API: http://localhost:5272/foundry/list
+[2025-11-17T00:54:15.134Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:15.1365204-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:15.419Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:15.4208652-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:278ms
+[2025-11-17T00:54:15.629Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:15.6329391-03:00 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:15.630Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:15.6334361-03:00 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:15.630Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:15.6342405-03:00 Total models fetched across all pages: 39
+[2025-11-17T00:54:15.631Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:15.6350231-03:00 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:499ms
+[2025-11-17T00:54:15.859Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:15.8636955-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:223ms
+[2025-11-17T00:54:15.867Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:15.868564-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:16.017Z] [INFO] Calling Foundry Local REST API: http://localhost:5272/foundry/list
+[2025-11-17T00:54:16.027Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:16.0274679-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:16.256Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:16.2604582-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:227ms
+[2025-11-17T00:54:16.520Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:16.5237956-03:00 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:16.520Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:16.5243043-03:00 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+[2025-11-17T00:54:16.521Z] [INFO] Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService [0]  2025-11-16T21:54:16.5250226-03:00 Total models fetched across all pages: 39
+[2025-11-17T00:54:16.523Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:16.5261413-03:00 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:499ms
+[2025-11-17T00:54:16.530Z] [DEBUG] Successfully fetched 130 models from Azure AI Foundry catalog
+[2025-11-17T00:54:16.800Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:16.803474-03:00 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:269ms
+[2025-11-17T00:54:16.816Z] [INFO] Information: Microsoft.Neutron.Telemetry.TelemetryLogger [0]  2025-11-16T21:54:16.8141547-03:00 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+[2025-11-17T00:54:17.319Z] [DEBUG] Fetching models from Azure AI Foundry catalog
+[2025-11-17T00:54:19.169Z] [DEBUG] Successfully fetched 130 models from Azure AI Foundry catalog

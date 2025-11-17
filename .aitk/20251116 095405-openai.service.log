@@ -1,0 +1,96 @@
+Information: Microsoft.Neutron.OpenAI.Provider.WinAppSDKEpDetector[0]
+   09:54:05.83 0 Skipping EP registration. Windows.AI.MachineLearning APIs require minimum Windows build version of 26100. Current version: 19045
+Information: Microsoft.Neutron.OpenAI.Provider.WinAppSDKEpDetector[0]
+   09:54:05.85 0 Finished initializing EPDetector
+Information: Microsoft.Neutron.OpenAI.Provider.OpenAIServiceProviderOnnx[0]
+   09:54:05.85 0 OpenAIService for type:OpenAIServiceProviderOnnx
+Information: Microsoft.Neutron.OpenAI.Provider.OpenAIServiceProviderNIM[0]
+   09:54:05.85 0 OpenAIService for type:OpenAIServiceProviderNIM
+Information: Microsoft.Neutron.Rpc.Service.JsonRpcService[0]
+   09:54:05.86 0 json-rpc-service running
+Information: Microsoft.Neutron.Rpc.Service.JsonRpcService[2305]
+   09:54:05.86 accept_pipe_connections Accepting pipe connections pipeName:ai.c8f912cf88e491872a9fb8a5871bb727
+Information: Microsoft.Hosting.Lifetime[14]
+   09:54:05.88 ListeningOnAddress Now listening on: http://localhost:5272
+Information: Microsoft.Hosting.Lifetime[0]
+   09:54:05.88 0 Application started. Press Ctrl+C to shut down.
+Information: Microsoft.Hosting.Lifetime[0]
+   09:54:05.88 0 Hosting environment: Production
+Information: Microsoft.Hosting.Lifetime[0]
+   09:54:05.88 0 Content root path: c:\Users\florc\.vscode\extensions\ms-windows-ai-studio.windows-ai-studio-0.26.0-win32-x64\bin\
+Information: Microsoft.Neutron.Rpc.Service.JsonRpcService[2306]
+   09:54:05.89 accept_pipe_incoming Accepting pipe incoming pipeName:ai.c8f912cf88e491872a9fb8a5871bb727 numOfSession:1
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:10.91 0 Valid devices: CPU, GPU
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:10.91 0 Valid EPs: CPUExecutionProvider, WebGpuExecutionProvider
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:10.92 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:11.55 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:624ms
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:13.73 0 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:13.73 0 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:13.73 0 Total models fetched across all pages: 39
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:13.73 0 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:2820ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.04 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:299ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.04 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.17 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.41 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:200ms
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:14.74 0 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:14.74 0 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:14.74 0 Total models fetched across all pages: 39
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.74 0 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:572ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.96 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:213ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:14.97 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:15.13 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:15.42 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:278ms
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:15.63 0 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:15.63 0 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:15.63 0 Total models fetched across all pages: 39
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:15.63 0 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:499ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:15.86 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:223ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:15.86 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:16.02 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:16.26 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:227ms
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:16.52 0 Model Phi-4-reasoning-generic-cpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:16.52 0 Model Phi-4-reasoning-generic-gpu:1 does not have a valid prompt template.
+Information: Microsoft.Neutron.AzureFoundry.AzureFoundryService[0]
+   09:54:16.52 0 Total models fetched across all pages: 39
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:16.52 0 UserAgent:axios/1.11.0 Command:ModelList Status:Success Direct:True  Time:499ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:16.80 0 UserAgent: Command:ListDownloadedModels Status:Success Direct:True  Time:269ms
+Information: Microsoft.Neutron.Telemetry.TelemetryLogger[0]
+   09:54:16.81 0 UserAgent: Command:ListLoadedModels Status:Success Direct:True  Time:0ms
+Information: AgentRpc-pipe-#1[4679]
+   11:16:20.95 stream_disconnected Stream disconnected
+Information: Microsoft.Neutron.Rpc.Service.KeepAliveService[0]
+   11:16:51.45 0 StopApplication
+Information: Microsoft.Hosting.Lifetime[0]
+   11:16:51.46 0 Application is shutting down...

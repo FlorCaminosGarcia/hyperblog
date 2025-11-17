@@ -1,0 +1,118 @@
+name: Default
+description: Default provider configuration with comprehensive parameter schemas
+parameterSchema:
+  - name: "max_tokens"
+    type: "integer"
+    displayName: "Max Response Tokens"
+    description: "Set the total token limit for both prompt and response. (One token ≈ approx. 4 English characters.)"
+    placeholder: "e.g. \"256\""
+    default: null
+
+  - name: "think_mode"
+    type: "boolean"
+    displayName: "Thinking"
+    description: "Enables the model to think before generating a response. This can improve the quality of the response, but may take longer."
+    placeholder: "e.g. \"true\""
+    default: null
+
+  - name: "reasoning_effort"
+    type: "string"
+    displayName: "Reasoning Effort"
+    description: "Constrains effort on reasoning for reasoning models. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response."
+    placeholder: "e.g. \"medium\""
+    default: "medium"
+    enum: ["low", "medium", "high"]
+
+  - name: "reasoning_summary"
+    type: "string"
+    displayName: "Reasoning Summary"
+    description: "Controls the level of detail in the reasoning summary for o3, o4-mini, and codex-mini models. Only available with Responses API."
+    placeholder: "e.g. \"auto\""
+    default: "detailed"
+    enum: ["", "auto", "concise", "detailed"]
+    
+  - name: "verbosity"
+    type: "string"
+    displayName: "Verbosity"
+    description: "Constrains the verbosity of the model's response. Lower values will result in more concise responses, while higher values will result in more verbose responses."
+    placeholder: "e.g. \"medium\""
+    default: "medium"
+    enum: ["low", "medium", "high"]
+
+  - name: "budget_tokens"
+    type: "integer"
+    displayName: "Max Budget Length (Tokens)"
+    description: "Determines how many tokens Claude uses to think. More tokens mean better answers for complex problems."
+    placeholder: "e.g. \"12000\""
+    default: null
+
+  - name: "temperature"
+    type: "number"
+    displayName: "Temperature"
+    description: "Adjust randomness: Lower values give more predictable responses. At near-zero, expect repetitive outputs."
+    placeholder: "e.g. \"1\""
+    default: null
+
+  - name: "top_p"
+    type: "number"
+    displayName: "Top P"
+    description: "Sets output variety by considering the top 50% of likely responses."
+    placeholder: "e.g. \"1\""
+    default: null
+
+  - name: "top_k"
+    type: "number"
+    displayName: "Top K"
+    description: "Limits the model to choose the next token from the top K options, controlling output diversity and randomness."
+    placeholder: "e.g. \"1\""
+    default: null
+
+  - name: "random_seed"
+    type: "integer"
+    displayName: "Random Seed"
+    description: "Sets a seed for the model to make the output repeatable each time"
+    placeholder: "e.g. \"0\""
+    default: null
+
+  - name: "frequency_penalty"
+    type: "number"
+    displayName: "Frequency Penalty"
+    description: "Reduces word repetition by lowering the possibility of selecting frequently used tokens in the text."
+    placeholder: "e.g. \"0\""
+    default: null
+
+  - name: "presence_penalty"
+    type: "number"
+    displayName: "Presence Penalty"
+    description: "Facilitates token variety by penalizing tokens already used in the text."
+    placeholder: "e.g. \"0\""
+    default: null
+
+  - name: "system_prompt"
+    type: "string"
+    displayName: "System Prompt"
+    description: "System instructions that define the AI's behavior and personality"
+    placeholder: "You are a helpful AI assistant..."
+    default: "You are a helpful AI assistant."
+
+  - name: "stop"
+    type: "string"
+    displayName: "Stop Sequences"
+    description: "Text sequences where the model should stop generating"
+    placeholder: "e.g. \"\\n\""
+    default: null
+
+  - name: "max_completion_tokens"
+    type: "integer"
+    displayName: "Max Completion Tokens"
+    description: "Limit the maximum output tokens for the model response. (One token ≈ approx. 4 English characters.)"
+    placeholder: "e.g. \"256\""
+    default: null
+
+  - name: "api"
+    type: "string"
+    displayName: "API"
+    description: "Select the API type to use for model requests"
+    placeholder: "e.g. \"Responses\""
+    default: "Responses"
+    enum: ["Responses", "Chat Completion"]

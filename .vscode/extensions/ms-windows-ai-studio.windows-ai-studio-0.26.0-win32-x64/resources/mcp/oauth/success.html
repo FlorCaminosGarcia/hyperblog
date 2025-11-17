@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>AI Toolkit - Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      box-sizing: border-box;
+      min-height: 100%;
+      margin: 0;
+      padding: 15px 30px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-family: "Segoe UI","Helvetica Neue","Helvetica",Arial,sans-serif;
+      background-color: #2C2C32;
+    }
+
+    .message-container {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 30px;
+    }
+
+    .message {
+      font-weight: 300;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .success {
+      font-weight: 400;
+    }
+
+    .success-icon {
+      margin-right: 1rem;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot?#iefix") format("embedded-opentype");
+      src: local("Segoe UI Light"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2") format("woff2"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf") format("truetype"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.svg#web") format("svg");
+      font-weight: 200
+    }
+
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.eot"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.eot?#iefix") format("embedded-opentype");
+      src: local("Segoe UI Semilight"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2") format("woff2"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf") format("truetype"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.svg#web") format("svg");
+      font-weight: 300
+    }
+
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.eot"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.eot?#iefix") format("embedded-opentype");
+      src: local("Segoe UI"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf") format("truetype"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.svg#web") format("svg");
+      font-weight: 400
+    }
+
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.eot"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.eot?#iefix") format("embedded-opentype");
+      src: local("Segoe UI Semibold"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf") format("truetype"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.svg#web") format("svg");
+      font-weight: 600
+    }
+
+    @font-face {
+      font-family: 'Segoe UI';
+      src: url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.eot"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.eot?#iefix") format("embedded-opentype");
+      src: local("Segoe UI Bold"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff") format("woff"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf") format("truetype"),url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.svg#web") format("svg");
+      font-weight: 700
+    }
+  </style>
+</head>
+<body>
+  <div class="message-container">
+    <div class="message">
+      <h1 class="success">
+        <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M20 0C31.0457 0 40 8.9543 40 20C40 31.0457 31.0457 40 20 40C8.9543 40 0 31.0457 0 20C0 8.9543 8.9543 0 20 0ZM20 2.5C10.335 2.5 2.5 10.335 2.5 20C2.5 29.665 10.335 37.5 20 37.5C29.665 37.5 37.5 29.665 37.5 20C37.5 10.335 29.665 2.5 20 2.5ZM28.6339 13.6161C29.122 14.1043 29.122 14.8957 28.6339 15.3839L17.6339 26.3839C17.1457 26.872 16.3543 26.872 15.8661 26.3839L11.3661 21.8839C10.878 21.3957 10.878 20.6043 11.3661 20.1161C11.8543 19.628 12.6457 19.628 13.1339 20.1161L16.75 23.7322L26.8661 13.6161C27.3543 13.128 28.1457 13.128 28.6339 13.6161Z" fill="#107C10"/>
+        </svg>
+        Sign-in Success
+      </h1>
+      <p>You can now close this tab and return to VS Code.</p>
+    </div>
+  </div>
+</body>
+</html>

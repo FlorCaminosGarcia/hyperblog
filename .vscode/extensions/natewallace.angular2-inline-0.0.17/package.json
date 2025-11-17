@@ -1,0 +1,59 @@
+{
+	"name": "angular2-inline",
+	"description": "Visual Studio Code language extension for javascript/typescript files that use Angular2.",
+	"version": "0.0.17",
+	"publisher": "natewallace",
+	"license": "UNLICENSED",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/natewallace/angular2-inline.git"
+	},
+	"engines": {
+		"vscode": "^1.7.1"
+	},
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#99C3D7"
+	},
+	"categories": [
+		"Languages"
+	],
+	"activationEvents": [
+		"onLanguage:typescript",
+		"onLanguage:javascript"
+	],
+	"main": "./src/main",
+	"contributes": {
+		"grammars": [
+			{
+				"scopeName": "template.ng",
+				"path": "./syntaxes/template.ng.json",
+				"injectTo": [
+					"source.js",
+					"source.ts"
+				]
+			},
+			{
+				"scopeName": "styles.ng",
+				"path": "./syntaxes/styles.ng.json",
+				"injectTo": [
+					"source.js",
+					"source.ts"
+				]
+			},
+			{
+				"scopeName": "source.ng.ts",
+				"path": "./syntaxes/source.ng.ts.json"
+			},
+			{
+				"scopeName": "source.ng.css",
+				"path": "./syntaxes/source.ng.css.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1763341185869,
+		"targetPlatform": "undefined",
+		"size": 330347
+	}
+}
