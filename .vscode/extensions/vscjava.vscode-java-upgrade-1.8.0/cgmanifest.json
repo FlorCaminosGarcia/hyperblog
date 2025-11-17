@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/component-detection-manifest.json",
+  "version": 1,
+  "registrations": [
+    {
+      "component": {
+        "type": "maven",
+        "maven": {
+          "groupId": "org.openrewrite.recipe",
+          "artifactId": "rewrite-migrate-java",
+          "version": "2.25.0"
+        }
+      },
+      "developmentDependency": false
+    },
+    {
+      "component": {
+        "type": "maven",
+        "maven": {
+          "groupId": "org.openrewrite.recipe",
+          "artifactId": "rewrite-spring",
+          "version": "5.19.0"
+        }
+      },
+      "developmentDependency": false
+    },
+    {
+      "component": {
+        "type": "maven",
+        "maven": {
+          "groupId": "org.openrewrite.recipe",
+          "artifactId": "rewrite-spring",
+          "version": "5.20.0"
+        }
+      },
+      "developmentDependency": false
+    },
+    {
+      "component": {
+        "type": "maven",
+        "maven": {
+          "groupId": "org.openrewrite.recipe",
+          "artifactId": "rewrite-testing-frameworks",
+          "version": "2.15.0"
+        }
+      },
+      "developmentDependency": false
+    },
+    {
+      "component": {
+        "type": "maven",
+        "maven": {
+          "groupId": "org.openrewrite.maven",
+          "artifactId": "rewrite-maven-plugin",
+          "version": "5.37.1"
+        }
+      },
+      "developmentDependency": false
+    }
+  ]
+}

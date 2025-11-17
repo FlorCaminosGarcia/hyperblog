@@ -1,0 +1,739 @@
+{
+	"name": "vscode-java-upgrade",
+	"icon": "assets/JavaUpgrade_128x.png",
+	"publisher": "vscjava",
+	"preview": false,
+	"displayName": "GitHub Copilot app modernization - upgrade for Java",
+	"description": "Upgrade Java project with GitHub Copilot",
+	"version": "1.8.0",
+	"aiKey": "0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255",
+	"mcpAiKey": [
+		"b73649cf-ca8f-4768-9e0e-b789d8529db5"
+	],
+	"repository": {
+		"url": "https://github.com/microsoft/vscode-app-mod-pack"
+	},
+	"engines": {
+		"vscode": "^1.104.0"
+	},
+	"categories": [
+		"AI",
+		"Chat"
+	],
+	"tags": [
+		"java",
+		"upgrade",
+		"maven",
+		"gradle",
+		"spring boot",
+		"app modernization"
+	],
+	"extensionDependencies": [
+		"github.copilot-chat"
+	],
+	"enabledApiProposals": [
+		"chatParticipantAdditions",
+		"chatParticipantPrivate"
+	],
+	"activationEvents": [
+		"onLanguage:java",
+		"workspaceContains:pom.xml",
+		"workspaceContains:**/pom.xml",
+		"workspaceContains:build.gradle",
+		"workspaceContains:**/build.gradle",
+		"workspaceContains:**/*.java"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "javaupgrade.gotoAgentMode",
+				"title": "Goto Agent mode",
+				"category": "app modernization - upgrade for Java"
+			},
+			{
+				"command": "javaupgrade.upgradeProject",
+				"title": "Upgrade Java Project",
+				"category": "app modernization - upgrade for Java"
+			},
+			{
+				"command": "javaupgrade.upgradeJavaFramework",
+				"title": "Upgrade Java Framework",
+				"category": "app modernization - upgrade for Java"
+			},
+			{
+				"command": "javaupgrade.generateUnitTests",
+				"title": "Generate Unit Tests",
+				"category": "app modernization - upgrade for Java"
+			},
+			{
+				"command": "javaupgrade.runCveValidation",
+				"title": "Run Cve Validation",
+				"category": "app modernization - upgrade for Java"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "javaupgrade",
+					"title": "app modernization - upgrade for Java",
+					"icon": "assets/JavaUpgrade_24x.svg",
+					"when": "appModExtDisabled"
+				}
+			]
+		},
+		"views": {
+			"javaupgrade": [
+				{
+					"id": "javaupgradeEntry",
+					"name": "Upgrade Java Project",
+					"icon": "assets/JavaUpgrade_16x.svg",
+					"contextualTitle": "Upgrade Java Project",
+					"when": "appModExtDisabled"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "javaupgradeEntry",
+				"contents": "We are now part of Agent Mode!\nTo get started, open Copilot Chat, select Agent Mode, and try one of these sample prompts:\n- \"upgrade this project to Java 21 using java upgrade tools\"\n- \"upgrade this project to Java 21 and Spring Boot 3.5 using java upgrade tools\"\n\nSee documentation [here](https://aka.ms/java-upgrade-docs).\n\nTo ensure better upgrade results, we strongly recommend using models like Claude Sonnet 3.7 or Claude Sonnet 4.\n\n[Upgrade Java Project](command:javaupgrade.upgradeProject)"
+			}
+		],
+		"languageModelTools": [
+			{
+				"name": "generate_upgrade_plan",
+				"displayName": "Generate Upgrade Plan",
+				"userDescription": "Generate a plan for upgrading a Java project",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "generate_upgrade_plan",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool is specifically designed to generate a professional, comprehensive and efficient plan for upgrading Java projects, and then starts a upgrade session (identified with a **session ID**) with the generated plan. Session ID is very important and MUST be passed to all the other tools contributed by this extension during an upgrade process, as it is used to track the upgrade process and store/retrieve context and state information. \nThis tool is the entry of an intelligent agent that is highly proficient in upgrading Java projects. This intelligent agent owns a set of other helpful tools to assist in the entire upgrade process and will guide the entire upgrade process by providing 'Next steps' information in these tools' result messages. You **MUST strictly** follow its instructions to complete the upgrade process. If 'Next steps' are provided, you **MUST** adhere to them precisely and not act on your own initiative; any unauthorized actions will be subject to severe penalties. This tool should be invoked at the beginning of an upgrade process. You MUST! invoke this tool whenever you need to upgrade a Java project.",
+				"tags": [
+					"java",
+					"java-upgrade",
+					"enable_other_tool_setup_development_environment_for_upgrade",
+					"enable_other_tool_upgrade_java_project_using_openrewrite",
+					"enable_other_tool_build_java_project",
+					"enable_other_tool_validate_cves_for_java",
+					"enable_other_tool_validate_behavior_changes_for_java",
+					"enable_other_tool_run_tests_for_java",
+					"enable_other_tool_summarize_upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"projectPath": {
+							"type": "string",
+							"description": "The absolute path to the Java project to upgrade. This should be the root directory containing the project's build files (pom.xml or build.gradle)."
+						},
+						"jdkPath": {
+							"type": "string",
+							"description": "The absolute path to the JDK installation, which MUST match the project's current Java version (`javaVersion`) exactly, i.e. if the project is using Java 11, the JDK path must point to a JDK 11 installation. Leave this parameter empty if you can not find a JDK that exactly matches the project's current Java version. This tool will try to detect a valid JDK installed on the system automatically if not specified, and even install it if necessary."
+						},
+						"buildToolPath": {
+							"type": "string",
+							"description": "The absolute path to the build tool (e.g., Maven, Gradle) installation for the project specified by 'projectPath'. This tool will try to detect a build tool installed on the system if not specified, and even install it if necessary."
+						},
+						"targetJavaVersion": {
+							"type": "string",
+							"enum": [
+								"8",
+								"11",
+								"17",
+								"21",
+								"25"
+							],
+							"description": "The target version of Java to upgrade to, allowed values are `8`, `11`, `17`, `21` and `25`. This parameter and `targetDependencies` should be set at least one of them, otherwise the tool will throw an error and ask you to set it. But you should only set this parameter when user explicitly asks to upgrade the Java version, otherwise you should leave it empty. you should never make assumptions about the target Java version to upgrade to."
+						},
+						"targetDependencies": {
+							"type": "array",
+							"description": "An array of dependencies (coordinates) to upgrade to. Each dependency should be in the format of `groupId:artifactId:version` or `groupId:*:version`. Use `groupId:*:version` format if you want to upgrade all artifacts of a group to the specified version. e.g., `org.springframework.boot:*:3.2.12` means upgrade all Spring Boot dependencies to version 3.2.12. Use `groupId:artifactId:version` to upgrade a specific artifact to a specific version, e.g. `org.apache.commons:commons-lang3:3.17.0` means upgrade the `commons-lang3` artifact of the `org.apache.commons` group to version 3.17.0. **For Spring Boot (group id: `org.springframework.boot`), the allowed versions are `2.7.x`, `3.2.x`, `3.3.x`, `3.4.x` or `3.5.x`. For Jakarta EE (group id: `jakarta.platform`), the allowed versions are `10.0.x`. For Spring Framework (group id: `org.springframework`), the allowed versions are `6.1.x` and `6.2.x`.** For other dependencies, any version is acceptable. If user hasn't specified the version of target dependency, you should use the latest allowed version, e.g, `3.5.x` for Spring Boot, `10.0.x` for Jakarta EE and `6.2.x` for Spring Framework. You should also use the latest patch version whenever possible. If you're unable to determine the coordinates (i.e. `groupId:artifactId:version`) of the dependency to be upgraded based solely on the user's input, you can ask user to clarify or analyze the project first in combination with the user's input to identify the correct coordinates. This parameter and `targetJavaVersion` should be set at least one of them, otherwise the tool will throw an error and ask you to set it. But you should only set this parameter when user explicitly asks to upgrade the dependencies, otherwise you should leave it empty. You should never make assumptions about the target dependencies to upgrade to.",
+							"items": {
+								"type": "string",
+								"description": "dependency (coordinates) to upgrade to, in the format of `groupId:artifactId:version` or `groupId:*:version`. Use `groupId:*:version` format if you want to upgrade all artifacts of a group to the specified version. e.g., `org.springframework.boot:*:3.2.12` means upgrade all Spring Boot dependencies to version 3.2.12. Use `groupId:artifactId:version` to upgrade a specific artifact to a specific version, e.g. `org.apache.commons:commons-lang3:3.17.0` means upgrade the `commons-lang3` artifact of the `org.apache.commons` group to version 3.17.0. **For Spring Boot (group id: `org.springframework.boot`), the allowed versions are `2.7.x`, `3.2.x`, `3.3.x`, `3.4.x` or `3.5.x`. For Jakarta EE (group id: `jakarta.platform`), the allowed versions are `10.0.x`. For Spring Framework (group id: `org.springframework`), the allowed versions are `6.1.x` and `6.2.x`.** For other dependencies, any version is acceptable. If user hasn't specified the version of target dependency, you should use the latest allowed version, e.g, `3.5.x` for Spring Boot, `10.0.x` for Jakarta EE and `6.2.x` for Spring Framework. You should also use the latest patch version whenever possible. If you're unable to determine the coordinates (i.e. `groupId:artifactId:version`) of the dependency to be upgraded based solely on the user's input, you can ask user to clarify or analyze the project first in combination with the user's input to identify the correct coordinates."
+							}
+						},
+						"targetJdkPath": {
+							"type": "string",
+							"description": "The absolute path to the JDK installation, which MUST matches the `targetJavaVersion` exactly, i.e. if the `targetJavaVersion` is `21`, the JDK path must point to a JDK 21 installation. Leave this parameter empty if you can not find a JDK that exactly matches the `targetJavaVersion`. This tool will try to detect a valid JDK installed on the system automatically if not specified, and even install it if necessary."
+						},
+						"useCurrentBranch": {
+							"type": "boolean",
+							"description": "Whether to use the current Git branch as the working branch for the upgrade. All changes will be committed to the current branch if set to true; otherwise, the changes will be committed to a newly auto-created branch. You should set this to true ONLY when the user explicitly requests to reuse the current branch, set it to false or leave it unset otherwise."
+						},
+						"guidelines": {
+							"type": "string",
+							"description": "Any specific guidelines or constraints for the upgrade process provided by the user, should be in the form of a markdown bulleted list. Be careful that \"Guidelines\" should focus only on **HOW** to perform the upgrade. Leave this parameter empty if no specific guidelines or constraints provided by the user, and you should never make assumptions about any guidelines or constraints."
+						}
+					},
+					"required": [
+						"projectPath"
+					]
+				}
+			},
+			{
+				"name": "confirm_upgrade_plan",
+				"displayName": "Review Plan",
+				"userDescription": "Review the generated plan for upgrading the Java project",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "confirm_upgrade_plan",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool displays the plan generated by the `generate_upgrade_plan` tool in the editor area, allowing users to make adjustments to the plan and confirm before execution. You should invoke this tool immediately after the plan is generated to ask user to confirm. This tool should only be invoked during an upgrade process.",
+				"tags": [
+					"java",
+					"java-upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The ID of the upgrade session to which the plan needing confirmation belongs. This should be the session ID generated by the `generate_upgrade_plan` tool."
+						}
+					},
+					"required": [
+						"sessionId"
+					]
+				}
+			},
+			{
+				"name": "setup_upgrade_environment",
+				"displayName": "Setup Development Environment",
+				"userDescription": "Setup the development environment for upgrading the Java project",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "setup_upgrade_environment",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool sets up the development environment required for the upgrade, including the build tool and at least two JDKs. These two JDKs are used to build the project before and after the upgrade, respectively. Here is how the tool works: \n1. The tool reads all necessary information from the 'plan.md' generated by tool `generate_upgrade_plan`. \n2. This tool will first detect compatible build tools and JDKs installed on the local machine automatically if they are not provided in the 'plan.md'; \n3. This tool will throw an exception to ask user to provide them manually if not detected.\n Be careful: \n- If the user provides any information in the conversation, you MUST make sure to write it into the appropriate place in 'plan.md' by yourself first because this tool only reads all information from 'plan.md'. \n- You MUST re-invoke this tool for these changes to take effect whether the user manually modifies 'plan.md' or you modify it. This tool should only be invoked during an upgrade process.",
+				"tags": [
+					"java",
+					"java-upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The ID of the upgrade session to which the plan needing confirmation belongs. This should be the session ID generated by the `generate_upgrade_plan` tool."
+						}
+					},
+					"required": [
+						"sessionId"
+					]
+				}
+			},
+			{
+				"name": "precheck_for_upgrade",
+				"displayName": "Pre-Check",
+				"userDescription": "Review the generated plan for upgrading the Java project",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "precheck_for_upgrade",
+				"canBeReferencedInPrompt": false,
+				"modelDescription": "This tool performs a set of pre-checks for the upgrade plan, ensuring that all necessary conditions are met before proceeding with the upgrade. It should be invoked before the actual upgrade process begins. This tool is intended for internal use only, you should NEVER invoke this tool directly.",
+				"tags": [
+					"java",
+					"java-upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The ID of the upgrade session to which the plan needing confirmation belongs. This should be the session ID generated by the `generate_upgrade_plan` tool."
+						}
+					},
+					"required": [
+						"sessionId"
+					]
+				}
+			},
+			{
+				"name": "upgrade_using_openrewrite",
+				"displayName": "Upgrade Using OpenRewrite",
+				"userDescription": "Upgrade the Java project using OpenRewrite",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "upgrade_using_openrewrite",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool ONLY supports upgrading JDK to up to 21, Spring Boot to up to 3.3.x, Spring Framework to up to 6.1.x and Jakarta EE to up to 10.0.x using OpenRewrite. Be careful: \n- This tool ONLY supports upgrading JDK, Spring Boot, Spring Framework and JEE to limited versions, This tool will only make limited initial changes for upgrading, so the project will not be fully upgraded and even not buildable after this tool is invoked. This tool should only be invoked during an upgrade process. \n- You MUST NOT invoke this tool if you are not upgrading upgrading JDK version, SpringBoot, Spring Framework or JEE.\n- You MUST NOT invoke this tool if you want to apply specific OpenRewrite recipes, you may run maven or gradle command instead.\n- You MUST ONLY invoke this tool when you are explicitly asked to even when you are upgrading this technologies. ",
+				"tags": [
+					"java",
+					"java-upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The ID of the upgrade session to which the plan needing confirmation belongs. This should be the session ID generated by the `generate_upgrade_plan` tool."
+						}
+					},
+					"required": [
+						"sessionId"
+					]
+				}
+			},
+			{
+				"name": "build_java_project",
+				"displayName": "Build Project",
+				"userDescription": "Build Java project to check status",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "build_java_project",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool uses Maven or Gradle to build Java project and report any build errors. This tool detects the build tool and JDK smartly, so you SHOULD ALWAYS use this tool when you need to build a Java project or check the build status or configuration of a Java project. \nIf there are any new code changes made **since the last build**, You should analyze and summarize the code changes into a detailed description and then use it as input ('codeChanges') of this tool, but be careful not to include any changes that were made in previous builds. You MUST! always invoke this tool to check the build status of the project after making any code changes.",
+				"tags": [
+					"java"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked inside an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"projectPath": {
+							"type": "string",
+							"description": "The absolute path to the Java project to build and check build status for. This should be the root directory containing the project's build files. This param is always required."
+						},
+						"jdkPath": {
+							"type": "string",
+							"description": "The absolute path to the JDK installation, which matches the project's current Java version. This tool will try to detect a JDK installed on the system if not specified, and it will throw an error if no suitable JDK is detected or if the provided JDK does not match the project's current Java version. You should then invoke this tool again with a valid JDK path. This parameter MUST be omitted when this tool is invoked inside an upgrade process."
+						},
+						"buildToolPath": {
+							"type": "string",
+							"description": "The absolute path to the build tool (e.g., Maven, Gradle) installation for the project specified by 'projectPath'. This tool will try to detect a build tool installed on the system if not specified, and it will throw an error if no suitable build tool is detected or if the provided build tool does not match the project's current build tool. You should then invoke this tool again with a valid build tool path. This parameter MUST be omitted when this tool is invoked inside an upgrade process."
+						},
+						"codeChangesMessage": {
+							"type": "string",
+							"description": "The short description of the new code changes made since last build, this will be used a commit message of the code changes, so it should be a short summary of the changes made in only one sentence. e.g. 'Fix CVE-2023-1234 in org.springframework:spring-core:5.3.9'. Leave this parameter empty if there are no new code changes made since the last build or if this is the first build of the project. This parameter is required if there are any code changes made in the workspace."
+						},
+						"codeChangesDetails": {
+							"type": "string",
+							"description": "Markdown formatted detailed description of the code changes made since last build. This should be a 2-level bullet list, with the first level being the short description of the issue fixed or the feature added and the second level being the summarized description of the changes made to fix the issue or implement the feature. e.g. '- Fix CVE-2023-1234 in `org.springframework:spring-core`\n  - Upgrade `org.springframework:spring-core` to `x.y.z`'. Leave this parameter empty if there are no new code changes made since the last build or if this is the first build of the project. This parameter is required if there are new code changes made since the last build. be careful not to include any changes that were made in previous builds."
+						}
+					},
+					"required": [
+						"codeChangesMessage",
+						"codeChangesDetails",
+						"projectPath"
+					]
+				}
+			},
+			{
+				"name": "validate_cves_for_java",
+				"displayName": "Check CVEs",
+				"userDescription": "Check if the given Java dependencies have any known CVEs",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "validate_cves_for_java",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tools checks if the given Java dependencies have any known vulnerabilities (CVEs). It will return a list of CVE issues found in the given dependencies, along with their severity and description. You MUST pass the dependencies to check as input, be careful that each dependency MUST be in the format of `groupId:artifactId:version`, e.g. `org.apache.commons:commons-lang3:3.12.0`. You must filter out any dependencies if you can not determine the version of them. You should use this tool to check for any known CVEs in the dependencies of the Java project",
+				"tags": [
+					"java"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked inside an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"dependencies": {
+							"type": "array",
+							"description": "An array of Java dependencies to check for CVE issues. Each dependency should be in the format of `groupId:artifactId:version` (all the 3 parts, groupId, artifactId and version are required), e.g. `org.apache.commons:commons-lang3:3.12.0`. Filter out any dependencies if you can not determine the version of them. This param is required if `sessionId` is omitted.",
+							"items": {
+								"type": "string",
+								"description": "dependency (in the format of `groupId:artifactId:version`, all the 3 parts, groupId, artifactId and version are required, e.g. `org.apache.commons:commons-lang3:3.12.0`) to check for CVE issues."
+							}
+						}
+					}
+				}
+			},
+			{
+				"name": "validate_behavior_changes",
+				"displayName": "Check Code Behavior Changes",
+				"userDescription": "Check if logic behavior of modified code remains the same based on git diff between two commits",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "validate_behavior_changes",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool validates if changed code maintains the same logic functionality as before modifying using LLM. This tool takes 2 commits (`fromCommit` and `toCommit`) as input, and compares the code changes between them using `git diff ${fromCommit} ${toCommit}` to validate if the logic behavior of the modified code remains the same. but both commits can be omitted: if `fromCommit` is omitted, it will compare the current working tree with the last commit; if `toCommit` is omitted, it will compare the current working tree with the `fromCommit`. Code behavior is required to be the same in refactoring or upgrade process.",
+				"tags": [
+					"java"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"projectPath": {
+							"type": "string",
+							"description": "The absolute path to the Java project to validate code behavior changes for. This should be the root directory containing the project's build files. This param is required if this tool is invoked outside an upgrade process, and it MUST be omitted when invoked inside an upgrade process."
+						},
+						"fromCommit": {
+							"type": "string",
+							"description": "the commit hash of the commit to compare from. If omitted, this tool will compare the current working tree with the last commit. This param MUST be omitted if this tool is invoked during an upgrade process."
+						},
+						"toCommit": {
+							"type": "string",
+							"description": "The commit hash of the commit to compare to. If omitted, this tool will compare the current working tree with the `fromCommit`. This param MUST be omitted if this tool is invoked during an upgrade process."
+						}
+					}
+				}
+			},
+			{
+				"name": "run_tests_for_java",
+				"displayName": "Run Unit Tests",
+				"userDescription": "Run tests in the Java project using the build tool",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "run_tests_for_java",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool runs test cases in the Java project using the build tool (e.g. Maven, Gradle) and reports any test errors/failures. This tool can be used to check the test status of the project.",
+				"tags": [
+					"java"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"projectPath": {
+							"type": "string",
+							"description": "The absolute path to the Java project to run tests for. This should be the root directory containing the project's build files. This param is always required."
+						},
+						"jdkPath": {
+							"type": "string",
+							"description": "The absolute path to the JDK installation, which matches the project's current Java version. This tool will try to detect a JDK installed on the system if not specified, and it will throw an error if no suitable JDK is detected or if the provided JDK does not match the project's current Java version. You should then invoke this tool again with a valid JDK path. This parameter MUST be omitted when this tool is invoked inside an upgrade process."
+						},
+						"buildToolPath": {
+							"type": "string",
+							"description": "The absolute path to the build tool (e.g., Maven, Gradle) installation for the project specified by 'projectPath'. This tool will try to detect a build tool installed on the system if not specified, and it will throw an error if no suitable build tool is detected or if the provided build tool does not match the project's current build tool. You should then invoke this tool again with a valid build tool path. This parameter MUST be omitted when this tool is invoked inside an upgrade process."
+						}
+					},
+					"required": [
+						"projectPath"
+					]
+				}
+			},
+			{
+				"name": "summarize_upgrade",
+				"displayName": "Summarize Upgrade",
+				"userDescription": "Summarize all the changes made during an upgrade process and generate a markdown formatted summary",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "summarize_upgrade",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool summarize the whole upgrade process and all the changes made to upgrade the Java project, including the code changes, test cases generated, and any other relevant information. This tool should be invoked at the end of an upgrade process to summarize the entire upgrade process. It will generate a markdown formatted summary of the upgrade process, which can be used to document the upgrade process.",
+				"tags": [
+					"java",
+					"java-upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						}
+					},
+					"required": [
+						"sessionId"
+					]
+				}
+			},
+			{
+				"name": "generate_tests_for_java",
+				"displayName": "Generate Unit Tests",
+				"userDescription": "Generate unit test cases for the Java project using LLM",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "generate_tests_for_java",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool generates test cases for the Java classes of a Java project. This tool will iterate through all the Java classes in the project and generate test cases for each class, so it would be time consuming for large projects. The generated test cases will be placed in the same package as the original class, but with a `Test` suffix added to the class name.",
+				"tags": [
+					"java",
+					"java-upgrade"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"projectPath": {
+							"type": "string",
+							"description": "The absolute path to the Java project to generate test cases. This should be the root directory containing the project's build files. This param is required if this tool is invoked outside an upgrade process, and MUST be omitted when invoked inside an upgrade process."
+						},
+						"jdkPath": {
+							"type": "string",
+							"description": "The absolute path to the JDK installation, which matches the project's current Java version. This tool will try to detect a JDK installed on the system if not specified, and it will throw an error if no suitable JDK is detected or if the provided JDK does not match the project's current Java version. You should then invoke this tool again with a valid JDK path. This parameter MUST be omitted when this tool is invoked inside an upgrade process."
+						},
+						"buildToolPath": {
+							"type": "string",
+							"description": "The absolute path to the build tool (e.g., Maven, Gradle) installation for the project specified by 'projectPath'. This tool will try to detect a build tool installed on the system if not specified, and it will throw an error if no suitable build tool is detected or if the provided build tool does not match the project's current build tool. You should then invoke this tool again with a valid build tool path. This parameter MUST be omitted when this tool is invoked inside an upgrade process."
+						}
+					}
+				}
+			},
+			{
+				"name": "list_jdks",
+				"displayName": "List JDKs",
+				"userDescription": "List all available JDKs on the system",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "list_jdks",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool lists available JDKs (Java Development Kits) on the system. It can be used to find installed JDKs path and version. The result will be in json format",
+				"tags": [
+					"java",
+					"jdk"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"additionalSearchPaths": {
+							"type": "array",
+							"description": "An array of paths to search for JDK installations.",
+							"items": {
+								"type": "string",
+								"description": "A path to search for JDK installations."
+							}
+						},
+						"version": {
+							"type": "string",
+							"description": "The major version of JDK to search. If not specified, all versions will be listed."
+						}
+					}
+				}
+			},
+			{
+				"name": "list_mavens",
+				"displayName": "List Mavens",
+				"userDescription": "List all available Mavens on the system",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "list_mavens",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool lists all available Mavens (Apache Maven) on the system. It can be used to find installed Mavens path and version. The result will be in json format",
+				"tags": [
+					"java",
+					"maven"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"additionalSearchPaths": {
+							"type": "array",
+							"description": "An array of paths to search for Maven installations.",
+							"items": {
+								"type": "string",
+								"description": "A path to search for Maven installations."
+							}
+						},
+						"includeVersion": {
+							"type": "boolean",
+							"default": false,
+							"description": "Whether to include the version of Maven in the search, by default will be false. When set to true, it may take longer time."
+						}
+					}
+				}
+			},
+			{
+				"name": "install_jdk",
+				"displayName": "Install JDK",
+				"userDescription": "Install a specific version of JDK from the internet",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "install_jdk",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool installs a specific version of JDK (Java Development Kit) from the internet. It downloads and installs the JDK from a trusted source (Microsoft/Eclipse Adoptium) and returns the installation path. This tool can be used when you need to install a JDK for a Java project or when the required JDK version is not available on the system.",
+				"tags": [
+					"java",
+					"jdk",
+					"install"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"version": {
+							"type": "string",
+							"description": "The version of JDK to install, if not set, the latest LTS version will be installed."
+						},
+						"dest": {
+							"type": "string",
+							"description": "The absolute path to the directory where the JDK will be installed. If not provided, ~/.jdk will be used."
+						}
+					},
+					"required": [
+						"version"
+					]
+				}
+			},
+			{
+				"name": "install_maven",
+				"displayName": "Install Maven",
+				"userDescription": "Install a specific version of Maven from the internet",
+				"icon": "assets/JavaUpgrade_16x.svg",
+				"toolReferenceName": "install_maven",
+				"canBeReferencedInPrompt": true,
+				"modelDescription": "This tool installs a specific version of Maven (a build automation tool for Java projects) from the internet. It downloads and installs Maven from a trusted source and returns the installation path. This tool can be used when you need to install Maven for a Java project or when the required Maven version is not available on the system.",
+				"tags": [
+					"java",
+					"maven",
+					"install"
+				],
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"sessionId": {
+							"type": "string",
+							"description": "The id of the upgrade session during which this tool is invoked. This Session ID will be used to track the upgrade process and retrieve environment and state information like the project path, JDK path, and build tool path and it should be the one generated by the `generate_upgrade_plan` tool. This param is required if this tool is invoked during an upgrade process, and MUST be omitted when invoked outside an upgrade process."
+						},
+						"version": {
+							"type": "string",
+							"default": "latest",
+							"enum": [
+								"latest",
+								"3.9.11",
+								"3.8.9"
+							],
+							"description": "The version of Maven to install, supported values are 'latest', '3.9.11' and '3.8.9'"
+						},
+						"dest": {
+							"type": "string",
+							"description": "The absolute path to the directory where Maven will be installed. If not provided, ~/.maven will be used."
+						}
+					},
+					"required": [
+						"version"
+					]
+				}
+			}
+		],
+		"configuration": [
+			{
+				"properties": {
+					"appModernization.uncommittedChangesAction": {
+						"type": "string",
+						"default": "Always Stash",
+						"enum": [
+							"Always Ask",
+							"Always Stash",
+							"Always Commit",
+							"Always Discard"
+						],
+						"enumDescriptions": [
+							"Prompt user for a decision on how to handle uncommitted changes",
+							"Stash (temporarily store) all uncommitted changes for later retrieval",
+							"Commit all uncommitted changes to the current branch.",
+							"Discard all uncommitted changes (warning: discard action is irreversible)."
+						],
+						"markdownDescription": "Controls how uncommitted changes should be handled (A clean working tree without uncommitted changes is required to modernize (migrate/upgrade) a project)."
+					},
+					"appModernization.commandTimeout": {
+						"type": "number",
+						"default": 3600,
+						"description": "The timeout in seconds for a command to complete."
+					},
+					"appModernization.javaUpgrade.enableQuickPick": {
+						"type": "boolean",
+						"default": false,
+						"description": "Controls whether to show a quick pick dialog to ask user to pick a solution (when available) when there are required configuration invalid. If set to false, VSCode Copilot Agent is required to handle the invalidation."
+					}
+				}
+			}
+		]
+	},
+	"main": "./dist/extension.js",
+	"scripts": {
+		"update-package-json": "npx tsx ./scripts/updatePackageJson.ts",
+		"update-package-json-for-benchmark": "npx tsx ./scripts/updatePackageJsonForBenchmark.ts",
+		"validate-behavior-changes": "npx tsx ./scripts/validateBehaviorChanges.ts",
+		"clean": "npx rimraf out && npx rimraf dist",
+		"lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --max-warnings=0",
+		"lint:fix:prettier": "prettier --write \"src/**/*.{js,ts,jsx,tsx,css,scss}\"",
+		"lint:fix:eslint": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix",
+		"watch:esbuild": "node esbuild.js --watch",
+		"watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+		"compile-tests": "tsc -p . --outDir out",
+		"compile": "tsc --noEmit && npm run lint && node esbuild.js",
+		"build": "tsc --noEmit && npm run lint && node esbuild.js --production",
+		"build-eval": "node esbuild-eval.js",
+		"vscode:prepublish": "npm run clean && npm run update-package-json && npm run build",
+		"package": "vsce package",
+		"package:benchmark": "npm run update-package-json-for-benchmark && npm run package",
+		"postinstall": "npx @vscode/dts dev",
+		"auth:feed": "npx vsts-npm-auth -config .npmrc -F",
+		"compile:mcp": "tsc --noEmit && npm run lint && node esbuild-mcp.js",
+		"build:mcp": "tsc --noEmit && npm run lint && node esbuild-mcp.js --production",
+		"package:mcp": "npm run clean && npm run update-package-json && npm run build:mcp && npm pack dist/"
+	},
+	"devDependencies": {
+		"@types/adm-zip": "^0.5.7",
+		"@types/express": "^5.0.1",
+		"@types/js-yaml": "^4.0.9",
+		"@types/lodash": "^4.17.17",
+		"@types/node": "^20.16.5",
+		"@types/semver": "^7.5.8",
+		"@types/vscode": "^1.99.1",
+		"@types/winreg": "^1.2.36",
+		"@types/xml2js": "^0.4.14",
+		"@typescript-eslint/eslint-plugin": "^7.18.0",
+		"@typescript-eslint/parser": "^7.18.0",
+		"@vscode/vsce": "^3.3.2",
+		"async-mutex": "^0.5.0",
+		"dts-bundle-generator": "^9.5.1",
+		"esbuild": "^0.25.3",
+		"eslint": "^8.57.1",
+		"eslint-config-prettier": "^10.1.2",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-prettier": "^5.2.6",
+		"prettier": "^3.5.3",
+		"rimraf": "^6.0.1",
+		"ts-loader": "^9.5.2",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@azure/identity": "^4.8.0",
+		"@microsoft/1ds-core-js": "^4.3.9",
+		"@microsoft/1ds-post-js": "^4.3.9",
+		"@modelcontextprotocol/sdk": "^1.17.5",
+		"@octokit/rest": "^21.1.1",
+		"@vscode/chat-extension-utils": "^0.0.0-alpha.5",
+		"@vscode/extension-telemetry": "^1.0.0",
+		"@vscode/tree-sitter-wasm": "^0.0.5",
+		"@xmldom/xmldom": "^0.9.8",
+		"adm-zip": "^0.5.16",
+		"applicationinsights": "^2.9.7",
+		"csv-parse": "^5.6.0",
+		"express": "^5.1.0",
+		"fast-xml-parser": "^5.2.1",
+		"glob": "^11.0.2",
+		"jdk-utils": "^0.6.0",
+		"js-tiktoken": "^1.0.20",
+		"js-yaml": "^4.1.0",
+		"lodash": "^4.17.21",
+		"openai": "^4.94.0",
+		"openpgp": "^5.11.3",
+		"rxjs": "^7.8.2",
+		"semver": "^7.7.1",
+		"string-argv": "^0.3.2",
+		"tar": "^7.4.3",
+		"web-tree-sitter": "^0.23.0",
+		"winreg": "^1.2.5",
+		"xml2js": "^0.6.2",
+		"zod": "^3.25.76"
+	},
+	"__metadata": {
+		"installedTimestamp": 1763334161819,
+		"targetPlatform": "undefined",
+		"size": 12501319
+	}
+}
